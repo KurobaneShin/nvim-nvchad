@@ -68,10 +68,70 @@ local plugins = {
       }
     end,
   },
+  -- vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+  -- vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
+  -- vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
+  -- vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    init = function()
+      local harpoon = require "harpoon"
+      vim.keymap.set("n", "<leader>a", function()
+        harpoon:list():append()
+      end)
+      vim.keymap.set("n", "<C-e>", function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+      end)
+
+      vim.keymap.set("n", "<A-n>", function()
+        harpoon:list():select(1)
+      end)
+      vim.keymap.set("n", "<A-m>", function()
+        harpoon:list():select(2)
+      end)
+      vim.keymap.set("n", "<A-j>", function()
+        harpoon:list():select(3)
+      end)
+      vim.keymap.set("n", "<A-k>", function()
+        harpoon:list():select(4)
+      end)
+    end,
+    config = function(_, opts)
+      require("harpoon").setup(opts)
+    end,
+    keys = {
+      { "<leader>a", mode = "n", desc = "Add current file to harpoon" },
+      { "C-e", mode = "n", desc = "Open harpoon" },
+      {
+        "<A-n>",
+        mode = "n",
+        desc = "Open harpoon and go to first bookmark",
+      },
+      {
+        "<A-m>",
+        mode = "n",
+        desc = "Open harpoon and go to second bookmark",
+      },
+      {
+        "<A-j>",
+        mode = "n",
+        desc = "Open harpoon and go to third bookmark",
+      },
+      {
+        "<A-k>",
+        mode = "n",
+        desc = "Open harpoon and go to fourth bookmark",
+      },
+    },
+  },
 
   {
-    dir = "/home/icaro/projects/discord.nvim",
-    name = "discord.nvim",
+    "mfussenegger/nvim-dap",
   },
 
   {
