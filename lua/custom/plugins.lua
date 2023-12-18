@@ -4,6 +4,10 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
 
   -- Override plugin definition options
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
 
   {
     "neovim/nvim-lspconfig",
@@ -170,7 +174,7 @@ local plugins = {
           ["."] = false,
           TelescopePrompt = false,
         },
-        copilot_node_command = vim.fn.expand "$HOME" .. "/.nvm/versions/node/v19.0.0/bin/node", -- Node.js version must be > 16.x
+        copilot_node_command = vim.fn.expand "$HOME" .. "/.nvm/versions/node/v19.9.0/bin/node", -- Node.js version must be > 16.x
         server_opts_overrides = {
           trace = "verbose",
           settings = {
