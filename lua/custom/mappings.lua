@@ -112,14 +112,14 @@ M.general = {
       end,
       "Open harpoon fourth bookmark",
     },
-  },
-  v = {
-    ["J"] = { ":m '>+1<CR>gv=gv", "move line down" },
-    ["K"] = { ":m '<-2<CR>gv=gv", "move line up" },
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
+  },
+  v = {
+    ["J"] = { ":m '>+1<CR>gv=gv", "move line down" },
+    ["K"] = { ":m '<-2<CR>gv=gv", "move line up" },
   },
 }
 
