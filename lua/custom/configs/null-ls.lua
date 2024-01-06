@@ -9,14 +9,20 @@ local sources = {
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "typescript", "typescriptreact" } }, -- so prettier works only on these filetypes
   -- Lua
   b.formatting.stylua,
-  null_ls.builtins.code_actions.eslint_d, -- suggest fixes from eslint
+  b.formatting.rome.with {
+    only_local = "node_modules/.bin",
+    command = "biome",
+  },
+  null_ls.builtins.code_actions.eslint_d.with {
+    only_local = "node_modules/.bin",
+  }, -- suggest fixes from eslint
 
-  null_ls.builtins.diagnostics.eslint_d, --show error message on the screen
+  null_ls.builtins.diagnostics.eslint_d.with {
+    only_local = "node_modules/.bin",
+  }, --show error message on the screen
   -- cpp
   b.formatting.clang_format,
-  b.formatting.gofmt,
 }
-
 null_ls.setup {
   debug = true,
   sources = sources,
