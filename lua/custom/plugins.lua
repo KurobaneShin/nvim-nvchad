@@ -35,6 +35,9 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
   },
 
   {
@@ -48,6 +51,21 @@ local plugins = {
     event = "InsertEnter",
     config = function()
       require("better_escape").setup()
+    end,
+  },
+
+  {
+    "declancm/cinnamon.nvim",
+    lazy = false,
+    config = function()
+      require("cinnamon").setup()
+    end,
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
     end,
   },
 

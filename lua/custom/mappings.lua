@@ -73,8 +73,6 @@ M.general = {
     },
 
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<C-d>"] = { "<C-d>zz", "page down" },
-    ["<C-u>"] = { "<C-u>zz", "page up" },
     ["<leader>a"] = {
       function()
         require("harpoon"):list():append()
