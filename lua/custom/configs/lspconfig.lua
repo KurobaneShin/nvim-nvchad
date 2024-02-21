@@ -24,7 +24,6 @@ lspconfig.tsserver.setup {
   biome = {},
 }
 
---test htmx lsp
 lspconfig.gopls.setup {
   settings = {
     gopls = {
