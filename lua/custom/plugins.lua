@@ -112,10 +112,6 @@ local plugins = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
-    keys = {
-      { "<leader>rb", mode = "n" },
-      { "<leader>rbf", mode = "n" },
-    },
     config = function()
       require("refactoring").setup()
     end,
@@ -129,31 +125,8 @@ local plugins = {
     },
     config = function(_, opts)
       require("harpoon").setup(opts)
+      require("core.utils").load_mappings "harpoon"
     end,
-    keys = {
-      { "<leader>a", mode = "n", desc = "Add current file to harpoon" },
-      { "C-e", mode = "n", desc = "Open harpoon" },
-      {
-        "<A-n>",
-        mode = "n",
-        desc = "Open harpoon and go to first bookmark",
-      },
-      {
-        "<A-m>",
-        mode = "n",
-        desc = "Open harpoon and go to second bookmark",
-      },
-      {
-        "<A-j>",
-        mode = "n",
-        desc = "Open harpoon and go to third bookmark",
-      },
-      {
-        "<A-k>",
-        mode = "n",
-        desc = "Open harpoon and go to fourth bookmark",
-      },
-    },
   },
 
   {

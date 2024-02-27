@@ -41,78 +41,9 @@ M.gitConfig = {
   },
 }
 
-M.general = {
-  x = {
-    ["<leader>ri"] = {
-      function()
-        require("refactoring").refactor "Inline Variable"
-      end,
-      "Inline Variable",
-    },
-    ["<leader>re"] = {
-      function()
-        require("refactoring").refactor "Extract Function"
-      end,
-      "Extract Function",
-    },
-    ["<leader>rf"] = {
-      function()
-        require("refactoring").refactor "Extract Function To File"
-      end,
-      "Extract Function To File",
-    },
-    ["<leader>rv"] = {
-      function()
-        require("refactoring").refactor "Extract Variable"
-      end,
-      "Extract Variable",
-    },
-  },
+M.harpoon = {
+  plugin = true,
   n = {
-    ["<leader>re"] = {
-      function()
-        require("refactoring").refactor "Extract Function"
-      end,
-      "Extract Function",
-    },
-    ["<leader>rf"] = {
-      function()
-        require("refactoring").refactor "Extract Function To File"
-      end,
-      "Extract Function To File",
-    },
-    ["<leader>rv"] = {
-      function()
-        require("refactoring").refactor "Extract Variable"
-      end,
-      "Extract Variable",
-    },
-    ["<leader>ri"] = {
-      function()
-        require("refactoring").refactor "Inline Variable"
-      end,
-      "Inline Variable",
-    },
-    ["<leader>rI"] = {
-      function()
-        require("refactoring").refactor "Inline Function"
-      end,
-      "Inline Function",
-    },
-    ["<leader>rb"] = {
-      function()
-        require("refactoring").refactor "Extract Block"
-      end,
-      "Extract Block",
-    },
-    ["<leader>rbf"] = {
-      function()
-        require("refactoring").refactor "Extract Block To File"
-      end,
-      "Extract Block To File",
-    },
-
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>a"] = {
       function()
         require("harpoon"):list():append()
@@ -150,6 +81,64 @@ M.general = {
       end,
       "Open harpoon fourth bookmark",
     },
+  },
+}
+
+M.general = {
+  x = {
+    ["<leader>ri"] = {
+      function()
+        require("refactoring").refactor "Inline Variable"
+      end,
+      "Inline Variable",
+    },
+    ["<leader>re"] = {
+      function()
+        require("refactoring").refactor "Extract Function"
+      end,
+      "Extract Function",
+    },
+    ["<leader>rf"] = {
+      function()
+        require("refactoring").refactor "Extract Function To File"
+      end,
+      "Extract Function To File",
+    },
+    ["<leader>rv"] = {
+      function()
+        require("refactoring").refactor "Extract Variable"
+      end,
+      "Extract Variable",
+    },
+  },
+  n = {
+
+    ["<leader>ri"] = {
+      function()
+        require("refactoring").refactor "Inline Variable"
+      end,
+      "Inline Variable",
+    },
+    ["<leader>rI"] = {
+      function()
+        require("refactoring").refactor "Inline Function"
+      end,
+      "Inline Function",
+    },
+    ["<leader>rb"] = {
+      function()
+        require("refactoring").refactor "Extract Block"
+      end,
+      "Extract Block",
+    },
+    ["<leader>rbf"] = {
+      function()
+        require("refactoring").refactor "Extract Block To File"
+      end,
+      "Extract Block To File",
+    },
+
+    [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
