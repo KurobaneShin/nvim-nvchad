@@ -7,6 +7,9 @@ local plugins = {
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
+    config = function()
+      require("core.utils").load_mappings "tmuxNavigator"
+    end,
   },
 
   {
