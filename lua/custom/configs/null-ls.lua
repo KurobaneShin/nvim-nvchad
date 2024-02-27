@@ -20,6 +20,8 @@ local sources = {
   null_ls.builtins.diagnostics.eslint_d.with {
     only_local = "node_modules/.bin",
   }, --show error message on the screen
+  null_ls.builtins.formatting.gofmt,
+  null_ls.builtins.formatting.goimports,
   -- cpp
   b.formatting.clang_format,
 }

@@ -1,6 +1,20 @@
 ---@type MappingsTable
 local M = {}
 
+M.gopher = {
+  plugin = true,
+  n = {
+    ["<leader>gsj"] = {
+      "<cmd> GoTagAdd json <CR>",
+      "Add json tag",
+    },
+    ["<leader>gsy"] = {
+      "<cmd> GoTagAdd yaml <CR>",
+      "Add yaml tag",
+    },
+  },
+}
+
 M.general = {
   x = {
     ["<leader>ri"] = {

@@ -85,19 +85,13 @@ local plugins = {
 
   {
     "olexsmir/gopher.nvim",
-    config = function()
-      require "nvim-lua/plenary.nvim"
-      require "nvim-treesitter/nvim-treesitter"
-
-      require("gopher").setup {
-        commands = {
-          go = "go",
-          gomodifytags = "gomodifytags",
-          gotests = "~/go/bin/gotests", -- also you can set custom command path
-          impl = "impl",
-          iferr = "iferr",
-        },
-      }
+    ft = "go",
+    config = function(_, opts)
+      require("gopher").setup(opts)
+      require("core.utils").load_mappings "gopher"
+    end,
+    build = function()
+      vim.cmd [[silent! GoInstallDeps]]
     end,
   },
 
