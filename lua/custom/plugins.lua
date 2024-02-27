@@ -114,6 +114,7 @@ local plugins = {
     },
     config = function()
       require("refactoring").setup()
+      require("core.utils").load_mappings "refactoring"
     end,
   },
   {
