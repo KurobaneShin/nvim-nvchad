@@ -15,6 +15,32 @@ M.gopher = {
   },
 }
 
+M.gitConfig = {
+  plugin = true,
+  n = {
+    ["<leader>gct"] = {
+      "<cmd> GitConflictChooseTheirs <CR>",
+      "Git conflict choose theirs",
+    },
+    ["<leader>gco"] = {
+      "<cmd> GitConflictChooseOurs <CR>",
+      "Git conflict choose Ours",
+    },
+    ["<leader>gcb"] = {
+      "<cmd> GitConflictChooseBoth <CR>",
+      "Git conflict choose both",
+    },
+    ["<leader>gcn"] = {
+      "<cmd> GitConflictNextConflict <CR>",
+      "Git conflict next conflict",
+    },
+    ["<leader>gcp"] = {
+      "<cmd> GitConflictPrevConflict <CR>",
+      "Git conflict prev conflict",
+    },
+  },
+}
+
 M.general = {
   x = {
     ["<leader>ri"] = {

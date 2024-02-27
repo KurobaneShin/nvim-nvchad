@@ -177,6 +177,8 @@ local plugins = {
     end,
     config = function(_, opts)
       require("git-conflict").setup(opts)
+
+      require("core.utils").load_mappings "gitConfig"
     end,
   },
 
