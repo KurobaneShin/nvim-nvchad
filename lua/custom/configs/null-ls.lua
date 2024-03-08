@@ -17,17 +17,8 @@ local sources = {
 
   b.formatting.rome.with {
     command = "biome",
-
     only_local = "node_modules/.bin",
   },
-
-  b.code_actions.eslint_d.with {
-    only_local = "node_modules/.bin",
-  }, -- suggest fixes from eslint
-
-  b.diagnostics.eslint_d.with {
-    only_local = "node_modules/.bin",
-  }, --show error message on the screen
 
   b.formatting.gofmt,
   b.formatting.goimports,

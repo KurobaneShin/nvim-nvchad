@@ -22,7 +22,6 @@ lspconfig.tsserver.setup {
 }
 
 lspconfig.biome.setup {}
-
 lspconfig.gopls.setup {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
