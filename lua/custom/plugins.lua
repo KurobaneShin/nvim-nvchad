@@ -160,6 +160,18 @@ local plugins = {
   },
 
   {
+    "mfussenegger/nvim-lint",
+    lazy = false,
+    event = {
+      "BufReadPre",
+      "BufNewFile",
+    },
+    config = function()
+      require "custom.configs.nvim-lint"
+    end,
+  },
+
+  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",

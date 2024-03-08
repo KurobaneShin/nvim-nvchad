@@ -3,7 +3,6 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local util = require "lspconfig.util"
-local configs = require "lspconfig/configs"
 -- if you just want default config for the servers then put them in a table
 local servers = {
   "html",
@@ -13,16 +12,16 @@ local servers = {
   "eslint",
   "tailwindcss",
   "docker_compose_language_service",
-  "quick_lint_js",
   "biome",
 }
 
 lspconfig.tsserver.setup {
   on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
   end,
-  biome = {},
 }
+
+lspconfig.biome.setup {}
 
 lspconfig.gopls.setup {
   cmd = { "gopls" },
@@ -45,6 +44,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
---
--- lspconfig.pyright.setup { blabla}
