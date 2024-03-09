@@ -172,6 +172,11 @@ local plugins = {
   },
 
   {
+    "stevearc/conform.nvim",
+    opts = {},
+  },
+
+  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
