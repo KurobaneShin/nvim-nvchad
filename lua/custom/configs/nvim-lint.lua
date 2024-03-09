@@ -7,6 +7,7 @@ lint.linters_by_ft = {
   javascript = { "biomejs", "eslint_d", "eslint" },
   typescriptreact = { "biomejs", "eslint_d", "eslint" },
   javascriptreact = { "biomejs", "eslint_d", "eslint" },
+  go = {"golangcilint"}
 }
 
 local eslint = lint.linters.eslint_d
@@ -22,7 +23,7 @@ eslint.args = {
   end,
 }
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost","BufWritePre" }, {
   group = lint_augroup,
   callback = function()
     lint.try_lint()

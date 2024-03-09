@@ -174,6 +174,10 @@ local plugins = {
   {
     "stevearc/conform.nvim",
     opts = {},
+    lazy = false,
+    config = function()
+      require "custom.configs.conform"
+    end,
   },
 
   {

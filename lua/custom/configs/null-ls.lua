@@ -7,18 +7,18 @@ local sources = {
   -- webdev stuff
   b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
 
-  -- b.formatting.prettier.with {
-  --   only_local = "node_modules/.bin",
-  --   filetypes = { "html", "markdown", "css", "typescript", "typescriptreact" },
-  -- }, -- so prettier works only on these filetypes
+  b.formatting.prettier.with {
+    only_local = "node_modules/.bin",
+    filetypes = { "html", "markdown", "css", "typescript", "typescriptreact" },
+  }, -- so prettier works only on these filetypes
 
   -- Lua
   b.formatting.stylua,
 
-  -- b.formatting.rome.with {
-  --   command = "biome",
-  --   only_local = "node_modules/.bin",
-  -- },
+  b.formatting.rome.with {
+    command = "biome",
+    only_local = "node_modules/.bin",
+  },
 
   b.formatting.gofmt,
   b.formatting.goimports,
