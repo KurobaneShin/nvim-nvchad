@@ -104,10 +104,6 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
-		keys = {
-			{ "<leader>rb", mode = "n" },
-			{ "<leader>rbf", mode = "n" },
-		},
 		config = function()
 			require("refactoring").setup()
 		end,
