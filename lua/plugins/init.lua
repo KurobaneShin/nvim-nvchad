@@ -10,6 +10,18 @@ return {
 	},
 
 	{
+		"mfussenegger/nvim-lint",
+		lazy = false,
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
+		config = function()
+			require("configs.nvim-lint")
+		end,
+	},
+
+	{
 		"nvim-tree/nvim-tree.lua",
 		opts = {
 			git = { enable = true },
