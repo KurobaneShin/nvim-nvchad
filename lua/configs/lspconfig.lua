@@ -14,14 +14,13 @@ local servers = {
   "tailwindcss",
   "docker_compose_language_service",
   "quick_lint_js",
-  "biome",
 }
 
 lspconfig.tsserver.setup {
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
   end,
-  biome = {},
 }
 
 --test htmx lsp
