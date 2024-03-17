@@ -1,8 +1,10 @@
 local webdevFormatter = function(bufnr)
   if require("conform").get_formatter_info("biome", bufnr).available then
     return { "biome", "biome-check" }
-  else
+  elseif require("conform").get_formatter_info("eslint_d", bufnr).available then
     return { "prettier", "eslint_d" }
+  else
+    return { "deno_fmt" }
   end
 end
 
