@@ -197,4 +197,11 @@ return {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("treesitter-context").setup()
+    end,
+  },
 }
