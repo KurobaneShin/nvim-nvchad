@@ -31,6 +31,8 @@ lspconfig.gopls.setup {
       },
       staticcheck = true,
       gofumpt = true,
+      completeUnimported = true,
+      usePlaceholders = true,
     },
   },
 }
