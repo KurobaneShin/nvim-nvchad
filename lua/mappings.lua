@@ -3,6 +3,7 @@ require "configs.mappings.harpoon"
 require "configs.mappings.tmuxNavigator"
 require "configs.mappings.refactoring"
 require "configs.mappings.gitConflict"
+require "configs.mappings.go"
 
 local map = vim.keymap.set
 

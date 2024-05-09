@@ -10,7 +10,7 @@ end
 
 local options = {
   format_on_save = {
-    timeout_ms = 500,
+    timeout_ms = 5000,
     lsp_fallback = true,
   },
   format_after_save = {
@@ -18,12 +18,17 @@ local options = {
   },
   log_level = vim.log.levels.ERROR,
   notify_on_error = false,
+  formatters = {
+    ["goimports-reviser"] = {
+      args = { "-rm-unused", "-set-alias", "-format", "$FILENAME" },
+    },
+  },
   formatters_by_ft = {
     javascript = webdevFormatter(bufnr),
     javascriptreact = webdevFormatter(bufnr),
     typescript = webdevFormatter(bufnr),
     typescriptreact = webdevFormatter(bufnr),
-    go = { "gofumpt", "goimports-reviser" },
+    go = { "goimports-reviser", "gofumpt" },
     lua = { "stylua" },
   },
 }
