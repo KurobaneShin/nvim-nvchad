@@ -6,26 +6,23 @@ local sources = {
 
   -- webdev stuff
   b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-
-  b.formatting.prettier.with {
-    only_local = "node_modules/.bin",
-    filetypes = { "html", "markdown", "css", "typescript", "typescriptreact" },
-  }, -- so prettier works only on these filetypes
-
+  b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "typescript", "typescriptreact" } }, -- so prettier works only on these filetypes
   -- Lua
   b.formatting.stylua,
-
   b.formatting.rome.with {
-    command = "biome",
     only_local = "node_modules/.bin",
+    command = "biome",
   },
+  null_ls.builtins.code_actions.eslint_d.with {
+    only_local = "node_modules/.bin",
+  }, -- suggest fixes from eslint
 
-  b.formatting.gofmt,
-  b.formatting.goimports,
+  null_ls.builtins.diagnostics.eslint_d.with {
+    only_local = "node_modules/.bin",
+  }, --show error message on the screen
   -- cpp
   b.formatting.clang_format,
 }
-
 null_ls.setup {
   debug = true,
   sources = sources,
