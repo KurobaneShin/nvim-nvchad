@@ -2,6 +2,7 @@ require "nvchad.mappings"
 require "configs.mappings.harpoon"
 require "configs.mappings.tmuxNavigator"
 require "configs.mappings.refactoring"
+require "configs.mappings.gitConflict"
 
 local map = vim.keymap.set
 

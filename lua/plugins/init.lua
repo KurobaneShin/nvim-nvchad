@@ -78,13 +78,24 @@ return {
   },
 
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
+    "andweeb/presence.nvim",
+    lazy = false,
     config = function()
-      require "configs.copilot"
+      require("presence").setup {
+        log_level = "debug",
+      }
     end,
   },
+
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   enable = false,
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require "configs.copilot"
+  --   end,
+  -- },
 
   {
     "akinsho/git-conflict.nvim",
@@ -108,7 +119,7 @@ return {
         commands = {
           go = "go",
           gomodifytags = "gomodifytags",
-          gotests = "~/go/bin/gotests", -- also you can set custom command path
+          -- gotests = "~/go/bin/gotests", -- also you can set custom command path
           impl = "impl",
           iferr = "iferr",
         },
