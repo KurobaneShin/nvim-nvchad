@@ -1,10 +1,13 @@
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
+local configs = require "nvchad.configs.lspconfig"
+
+local on_attach = configs.on_attach
+local on_init = configs.on_init
+local capabilities = configs.capabilities
+
 local lspconfig = require "lspconfig"
-local util = require "lspconfig.util"
-local configs = require "lspconfig/configs"
--- if you just want default config for the servers then put them in a table
 local servers = {
   "html",
   "cssls",
@@ -15,14 +18,6 @@ local servers = {
   "docker_compose_language_service",
 }
 
-lspconfig.tsserver.setup {
-  on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
-    client.server_capabilities.documentFormattingProvider = false
-  end,
-}
-
---test htmx lsp
 lspconfig.gopls.setup {
   settings = {
     gopls = {
@@ -43,6 +38,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
---
--- lspconfig.pyright.setup { blabla}

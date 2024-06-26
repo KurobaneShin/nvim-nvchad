@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map("n", "gife", "<cmd>GoIfErr<CR>")
+map("n", "gfie", "<cmd>GoIfErr<CR>")
 map("n", "gfst", "<cmd>GoFillStruct<CR>")
 map("n", "gfsw", "<cmd>GoFillSwitch<CR>")
 map("n", "gtfl", "<cmd>GoTestFile<CR>")

@@ -71,19 +71,28 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    keys = {
+      { "K", mode = "n", desc = "lsp hover" },
+    },
+
     config = function()
-      require "nvchad.configs.lspconfig"
+      require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
 
   {
-    "andweeb/presence.nvim",
-    lazy = false,
-    config = function()
-      require("presence").setup {
-        log_level = "debug",
-      }
+    "numToStr/Comment.nvim",
+    keys = {
+      { "gcc", mode = "n", desc = "Comment toggle current line" },
+      { "gc", mode = { "n", "o" }, desc = "Comment toggle linewise" },
+      { "gc", mode = "x", desc = "Comment toggle linewise (visual)" },
+      { "gbc", mode = "n", desc = "Comment toggle current block" },
+      { "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
+      { "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
+    },
+    config = function(_, opts)
+      require("Comment").setup(opts)
     end,
   },
 

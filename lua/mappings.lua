@@ -7,6 +7,7 @@ require "configs.mappings.go"
 
 local map = vim.keymap.set
 
+map("n", "M", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "hover definition" })
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("v", ";", ":", { nowait = true })
