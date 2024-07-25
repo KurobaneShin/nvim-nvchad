@@ -1,7 +1,6 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 vim.g.mapleader = " "
 
-local autocmd = vim.api.nvim_create_autocmd
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -38,6 +37,7 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
 autocmd("BufEnter", {
   pattern = "*",
   command = "set relativenumber",
