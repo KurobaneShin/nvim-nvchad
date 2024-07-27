@@ -44,19 +44,19 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = options.treesitter,
+    -- opts = options.treesitter,
     dependencies = {
       "windwp/nvim-ts-autotag",
     },
   },
   {
     "nvim-tree/nvim-tree.lua",
-    opts = options.nvimtree,
+    -- opts = options.nvimtree,
   },
 
   {
     "williamboman/mason.nvim",
-    opts = options.mason,
+    -- opts = options.mason,
   },
 
   --  {
@@ -105,6 +105,25 @@ return {
   --     require "configs.copilot"
   --   end,
   -- },
+  {
+    "supermaven-inc/supermaven-nvim",
+    event = "VeryLazy",
+    config = function()
+      require("supermaven-nvim").setup {}
+    end,
+  },
+
+  {
+    "NeogitOrg/neogit",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+    config = true,
+  },
 
   {
     "akinsho/git-conflict.nvim",
@@ -165,10 +184,10 @@ return {
       require("harpoon").setup(opts)
     end,
   },
-  {
-    "christoomey/vim-tmux-navigator",
-    event = "VeryLazy",
-  },
+  -- {
+  --   "christoomey/vim-tmux-navigator",
+  --   event = "VeryLazy",
+  -- },
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -176,13 +195,14 @@ return {
       require("better_escape").setup()
     end,
   },
-  {
-    "declancm/cinnamon.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("cinnamon").setup()
-    end,
-  },
+  -- {
+  --   "declancm/cinnamon.nvim",
+  --   event = "VeryLazy",
+  --   version = "*", -- use latest release
+  --   config = function()
+  --     require("cinnamon").setup()
+  --   end,
+  -- },
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages

@@ -5,19 +5,22 @@ local M = {}
 local highlights = require "highlights"
 
 M.ui = {
-  theme = "gruvbox_light",
-  theme_toggle = { "gruvbox_light", "gruvbox" },
+  theme = "penumbra_dark",
+  theme_toggle = { "penumbra_light", "penumbra_dark" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
 
   statusline = {
-    theme = "minimal", -- default/vscode/vscode_colored/minimal
+    theme = "vscode", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
     separator_style = "default",
     order = nil,
     modules = nil,
+  },
+  tabufline = {
+    enabled = false,
   },
 }
 
