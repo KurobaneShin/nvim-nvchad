@@ -184,10 +184,10 @@ return {
       require("harpoon").setup(opts)
     end,
   },
-  {
-    "christoomey/vim-tmux-navigator",
-    event = "VeryLazy",
-  },
+  -- {
+  --   "christoomey/vim-tmux-navigator",
+  --   event = "VeryLazy",
+  -- },
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -195,13 +195,14 @@ return {
       require("better_escape").setup()
     end,
   },
-  {
-    "declancm/cinnamon.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("cinnamon").setup()
-    end,
-  },
+  -- {
+  --   "declancm/cinnamon.nvim",
+  --   event = "VeryLazy",
+  --   version = "*", -- use latest release
+  --   config = function()
+  --     require("cinnamon").setup()
+  --   end,
+  -- },
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages
