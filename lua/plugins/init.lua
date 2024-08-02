@@ -109,10 +109,48 @@ return {
     "supermaven-inc/supermaven-nvim",
     event = "VeryLazy",
     config = function()
-      require("supermaven-nvim").setup {}
+      require("supermaven-nvim").setup {
+        keymaps = {
+          accept_suggestion = "<A-l>",
+        },
+      }
     end,
   },
-
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("tiny-inline-diagnostic").setup()
+    end,
+  },
+  {
+    "zeioth/garbage-day.nvim",
+    dependencies = "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+    opts = {
+      -- your options here
+    },
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    event = "VeryLazy",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+  -- stylua: ignore
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "tf", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  },
+  },
   {
     "NeogitOrg/neogit",
     event = "VeryLazy",
@@ -184,10 +222,10 @@ return {
       require("harpoon").setup(opts)
     end,
   },
-  -- {
-  --   "christoomey/vim-tmux-navigator",
-  --   event = "VeryLazy",
-  -- },
+  {
+    "christoomey/vim-tmux-navigator",
+    event = "VeryLazy",
+  },
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",

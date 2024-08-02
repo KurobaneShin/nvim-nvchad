@@ -43,3 +43,8 @@ autocmd("BufEnter", {
   pattern = "*",
   command = "set relativenumber",
 })
+
+autocmd("BufEnter", {
+  pattern = "*",
+  command = "lua vim.diagnostic.config({ virtual_text = false })",
+})
