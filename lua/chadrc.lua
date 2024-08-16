@@ -5,8 +5,8 @@ local M = {}
 local highlights = require "highlights"
 
 M.ui = {
-  theme = "penumbra_dark",
-  theme_toggle = { "penumbra_light", "penumbra_dark" },
+  theme = "chadracula-evondev",
+  theme_toggle = { "penumbra_light", "chadracula-evondev" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
