@@ -24,3 +24,10 @@ map("x", "<leader>p", '"_dP')
 map("n", "<leader>tbg", function()
   require("base46").toggle_transparency()
 end, { desc = "toggle transparency" })
+
+map("n", "<Esc>", function()
+  vim.cmd "noh"
+  if require("flash.plugins.char").state then
+    require("flash.plugins.char").state:hide()
+  end
+end, { desc = "general clear highlights" })

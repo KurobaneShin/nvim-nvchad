@@ -48,3 +48,8 @@ autocmd("BufEnter", {
   pattern = "*",
   command = "lua vim.diagnostic.config({ virtual_text = false })",
 })
+
+-- sync buffers automatically
+vim.opt.autoread = true
+-- disable neovim generating a swapfile and showing the error
+vim.opt.swapfile = false
